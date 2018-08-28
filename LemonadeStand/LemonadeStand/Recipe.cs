@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Inventory
+    class Recipe
     {
-        //member variables
-        int lemons;
-        int cupsOfSugar;
-        int bagsOfIce;
-        string lemonade;
+        int lemonAmount;
+        int iceAmount;
+        int sugarAmount;
+
+        //methods 
+        void MakeLemonade()
+        {
+
+        }
     }
 }

@@ -8,5 +8,9 @@ namespace LemonadeStand
 {
     class Day
     {
+        //member variables
+        int forecast;
+        int actualWeather;
+
     }
 }

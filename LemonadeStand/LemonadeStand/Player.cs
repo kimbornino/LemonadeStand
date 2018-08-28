@@ -8,5 +8,18 @@ namespace LemonadeStand
 {
     class Player
     {
+        string playerName;
+        string recipe;
+     
+    //methods 
+       public /*double*/ void SetPrice()
+        {
+
+        }
+        public void BuySupplies ()
+        {
+
+        }
+            
     }
 }

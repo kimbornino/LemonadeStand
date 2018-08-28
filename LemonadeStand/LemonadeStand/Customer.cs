@@ -8,5 +8,19 @@ namespace LemonadeStand
 {
     class Customer
     {
+        //member variables
+        //tempPreference
+        //weatherPreference
+        //pricePreference
+            
+        //constructor
+
+
+        //methods
+        //GetTempPreference()
+        //{
+            //write switch case here
+        }
+        //chooseToBuy
     }
-}
+//}

@@ -8,5 +8,21 @@ namespace LemonadeStand
 {
     class Game
     {
+        //memmber variables
+        rules
+        players
+
+        //methods
+        DisplayRules
+        DisplayForecast
+        DisplayInventory
+        GetsUserInput
+        GetActualForecast
+        playDay
+        TotalProfits
+        DisplayProfits
+        DecideToDoNextRound
+
+
     }
 }
