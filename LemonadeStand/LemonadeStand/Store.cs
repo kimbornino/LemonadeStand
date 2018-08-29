@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LemonadeStand
-{
-    class Store
-    {
-        //some of these variables already exist in other places.  Should not need to declare them twice if they are puplic and need to store a value that is carried
-        public double pricePoint;
-        int sugar;
-        int ice;
-        int lemons;
-        int cups;
-        int costumer;
-    }
-}
+//namespace LemonadeStand
+//{
+    //class Store
+    //{
+        //member variables
+        //double lemonCost = .25;
+        //double iceCost = 2.00;
+        //double SugarCost = 1.00;
+        //public string costumer; //(who HAS a money amount)
+        //public int pitcherRequest;
+
+        //public int //Sellitems()
+        //{
+            //return user input from UI class about how many pitchers to make
+        //}
+    //}
+//}

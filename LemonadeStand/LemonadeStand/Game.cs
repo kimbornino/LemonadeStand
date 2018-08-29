@@ -9,20 +9,32 @@ namespace LemonadeStand
     class Game
     {
         //memmber variables
-        rules
-        players
+        public string rules;
+        public Player player;
+        //public UserInterface
+        public Weather forecast;
+        public Weather actualWeather;
 
         //methods
-        DisplayRules
-        DisplayForecast
-        DisplayInventory
-        GetsUserInput
-        GetActualForecast
-        playDay
-        TotalProfits
-        DisplayProfits
-        DecideToDoNextRound
+        //public UserInterface.DisplayRules()
+       // {
 
+        //}
+        //Weather.DisplayForecast();
+        //DisplayInventory();
+        //GetsUserInput
+        //GetActualForecast
+        //playDay
+        //TotalProfits
+        //DisplayProfits
+        //DecideToDoNextRound
 
+        public void RunGame()
+        {
+            // CAN i ACTUALLY USE var HERE?
+            var rules = new UserInterface();
+            rules.DisplayRules();
+            
+        }
     }
 }

@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Customer
+    class Customer: Player
     {
         //member variables
-        //tempPreference
-        //weatherPreference
-        //pricePreference
-            
+        public int weatherPreference;
+        double pricePreference;
+        int tastepreference;
+        // inherited "name" and anything else from player class
         //constructor
-
+        public Customer(int weatherPreference, int pricePreference)
+        {
+            this.weatherPreference = weatherPreference;
+            this.pricePreference = pricePreference;
+            this.pricePreference = pricePreference;
+        }
 
         //methods
         //GetTempPreference()
@@ -23,4 +28,5 @@ namespace LemonadeStand
         }
         //chooseToBuy
     }
+//create a loop to run a "for each" with a list of costumers
 //}

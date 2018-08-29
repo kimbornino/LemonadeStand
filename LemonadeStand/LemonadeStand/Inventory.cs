@@ -9,9 +9,22 @@ namespace LemonadeStand
     class Inventory
     {
         //member variables
-        int lemons;
-        int cupsOfSugar;
-        int bagsOfIce;
-        string lemonade;
+        int lemons = 0;
+        int cupsOfSugar = 0;
+        int bagsOfIce = 0;
+
+      
+            //methods 
+            //initRecipe= empty string
+           // void MakeLemonade()
+           // {
+                /*while (PitcherRequest <= pitcherNumber && < 5)
+                {
+                    lemonAmount.Inventory - lemonAmount// how do I write this correctly?
+                Inventory - iceAmountInBags
+                    Inventory - sugarAmountinCups */
+    
+
     }
 }
+        

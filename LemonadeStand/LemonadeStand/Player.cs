@@ -9,7 +9,8 @@ namespace LemonadeStand
     class Player
     {
         string playerName;
-        string recipe;
+        // already have a whole recipe class with its own memeber variables.;
+        double investmentMoney = 10.00; 
      
     //methods 
        public /*double*/ void SetPrice()
