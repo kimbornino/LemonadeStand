@@ -6,41 +6,56 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Weather
+    public class Weather
     {
         //member vairables
-        public string temperature;
+        //forecast
         public string condition;
-        public int actualWeather;
-        public int forecast;
-
-        //methods
+        public string temperature;
+        public List<string> conditionsString;
+        public List<string> temp;
+        //methodsure
 
         //constrctor
         public Weather()
         {
-            List<string> condition = new List<string>() {"Rainy", "Cloudy", "Sunny", "Humid"};
-            List<string> temp = new List<string>() {"50-60", "60-70", "70-80", "80-90"};
-
+            conditionsString = new List<string>() {"Rainy", "Cloudy", "Sunny", "Humid"};
+            temp = new List<string>() {"50-60", "60-70", "70-80", "80-90"};
+            SetUpWeather();
+            
         }
         //methods
-        public int GetTemp()
+  
+
+        public void GetTemp()
+            {
+                Random rnd = new Random();
+                int randomtemp = rnd.Next(0, 4); // creates a number between 0 and 3 
+                temperature = temp[randomtemp];
+                //tempIndex = 
+            }
+
+
+            void GetCondition()
+            {
+                Random rnd = new Random();
+                int RandomCondition = rnd.Next(0, 4); //creates a number between 0 and 3
+                condition = conditionsString[RandomCondition];
+            }
+
+        public void SetUpWeather()
         {
-            Random rnd = new Random();
-            int temperature = rnd.Next(1, 5); // creates a number between 1 and 4 
-            return temperature;
+            //GetForcast();
+            //GetActual();
+            GetTemp();
+            GetCondition();
         }
-        public int GetCondition()
+        public void Getforecast()
         {
-            Random rnd = new Random();
-            int condition = rnd.Next(1, 5); //creates a number between 1 and 4
-            return condition;
+
+            Console.WriteLine("\n \n The forecast is " + temperature + " degrees "+ "and" + " " + condition + ".");
         }
 
-        public void getForecast()
-        {
-            Console.WriteLine("The weather forecast is:" + temperature + "and" + condition);
-        }
         public void getActualWeather()
         {
             Random rnd = new Random();

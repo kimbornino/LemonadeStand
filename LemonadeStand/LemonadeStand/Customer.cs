@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Customer: Player
+    public class Customer: Player
     {
         //member variables
         public int weatherPreference;

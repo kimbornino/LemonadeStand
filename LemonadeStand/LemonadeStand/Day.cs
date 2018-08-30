@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Day
+    public class Day
     {
-        //member variables
-        int forecast;
-        int actualWeather;
-
+        //member variables (has a)
+        public string customers;
+        public Weather weather;
+    
+        public Day()
+        {
+            weather = new Weather();
+    
+        }
+        
     }
 }

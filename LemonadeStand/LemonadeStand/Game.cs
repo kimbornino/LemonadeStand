@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Game
+    public class Game
     {
         //memmber variables
-        public string rules;
+       
         public Player player;
-        //public UserInterface
-        public Weather forecast;
-        public Weather actualWeather;
+        public Day day;
+        public Store store;
+        
 
-        //methods
-        //public UserInterface.DisplayRules()
-       // {
+        public Game()
+        {
+            day = new Day();
+            player = new Player();
+            store = new Store();
+        }
+        
 
-        //}
-        //Weather.DisplayForecast();
-        //DisplayInventory();
-        //GetsUserInput
+       
         //GetActualForecast
         //playDay
         //TotalProfits
@@ -31,10 +32,23 @@ namespace LemonadeStand
 
         public void RunGame()
         {
-            // CAN i ACTUALLY USE var HERE?
+            
             var rules = new UserInterface();
             rules.DisplayRules();
-            
+            day.weather.Getforecast();
+            //player.changeRecipe();
+            var price = new UserInterface();
+            price.DisplayStorePrices();
+            var displayWallet = new UserInterface();
+            displayWallet.DisplayWalletBalance(player);
+            var displayInventory = new UserInterface();
+            displayInventory.DisplayInventory(player);
+            player.GetSuppliesRequest();
+            store.SellItems(player);
+            store.TakeMoney(player);
+            displayWallet.DisplayWalletBalance(player);
+            displayInventory.DisplayInventory(player);
+
         }
     }
 }

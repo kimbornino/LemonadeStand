@@ -6,25 +6,20 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Inventory
+    public class Inventory
     {
         //member variables
-        int lemons = 0;
-        int cupsOfSugar = 0;
-        int bagsOfIce = 0;
+        public int lemons = 0;
+        public int cupsOfSugar = 0;
+        public int bagsOfIce = 0;
+        public int lemonInventoryRequest;
+        public int iceInventoryRequest;
+        public int sugarInventoryRequest;
 
-      
-            //methods 
-            //initRecipe= empty string
-           // void MakeLemonade()
-           // {
-                /*while (PitcherRequest <= pitcherNumber && < 5)
-                {
-                    lemonAmount.Inventory - lemonAmount// how do I write this correctly?
-                Inventory - iceAmountInBags
-                    Inventory - sugarAmountinCups */
-    
+        public Inventory()
+        {
 
+        }
     }
 }
         
