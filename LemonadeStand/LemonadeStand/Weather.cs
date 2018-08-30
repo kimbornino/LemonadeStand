@@ -9,9 +9,11 @@ namespace LemonadeStand
     public class Weather
     {
         //member vairables
-        //forecast
+       
         public string condition;
         public string temperature;
+        public string forecast;
+        public string actualWeather;
         public List<string> conditionsString;
         public List<string> temp;
         //methodsure
@@ -45,30 +47,34 @@ namespace LemonadeStand
 
         public void SetUpWeather()
         {
-            //GetForcast();
-            //GetActual();
             GetTemp();
             GetCondition();
         }
-        public void Getforecast()
+        public string Getforecast()
         {
 
             Console.WriteLine("\n \n The forecast is " + temperature + " degrees "+ "and" + " " + condition + ".");
+            return forecast;
         }
 
-        public void getActualWeather()
+        public string GetActualWeather()
         {
             Random rnd = new Random();
             int mayChange = rnd.Next(1, 4); //creates a number between 1 and 3
 
-            if (mayChange == 1 || mayChange == 2)
+            if (mayChange == 1)
             {
-         //forecast change
+                int randomtemp = rnd.Next(0, 4); // creates a number between 0 and 3 
+                temperature = temp[randomtemp];
+
             }
-            if (mayChange == 3)
+            else if (mayChange == 2)
             {
-                //forecast changes
+                int RandomCondition = rnd.Next(0, 4); //creates a number between 0 and 3
+                condition = conditionsString[RandomCondition];
             }
+            Console.WriteLine("\n \n Good Morning!  The actual weather today is " + temperature + " degrees " + "and" + " " + condition + ".");
+            return actualWeather;
         }
     }
 }

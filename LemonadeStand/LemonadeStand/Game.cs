@@ -9,30 +9,28 @@ namespace LemonadeStand
     public class Game
     {
         //memmber variables
-       
+
         public Player player;
         public Day day;
         public Store store;
-        
+        public Customer customers;
+
 
         public Game()
         {
             day = new Day();
             player = new Player();
             store = new Store();
+            //customers = new Customer( , 1);
         }
-        
 
-       
-        //GetActualForecast
-        //playDay
         //TotalProfits
         //DisplayProfits
         //DecideToDoNextRound
 
         public void RunGame()
         {
-            
+
             var rules = new UserInterface();
             rules.DisplayRules();
             day.weather.Getforecast();
@@ -50,8 +48,7 @@ namespace LemonadeStand
             displayWallet.DisplayWalletBalance(player);
             displayInventory.DisplayInventory(player);
             player.MakeLemonade();
-            displayInventory.DisplayInventory(player);
-
+            day.weather.GetActualWeather();
         }
     }
 }

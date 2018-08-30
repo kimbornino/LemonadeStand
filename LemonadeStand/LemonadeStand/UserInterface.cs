@@ -12,7 +12,7 @@ namespace LemonadeStand
    
         public void DisplayRules()
         {
-            Console.WriteLine("Welcome to the world of entrpeanuership! \n As you play this game, you will see if you have what it takes to own and operate your own lemonade stand. \n  You will need to make decisions about how much lemonade to prepare as well as what price point to set it at. \n You will get a daily forcast to help you plan. \n But beware!  As we all know, weather is prone to change! \n  Alright.  If you're ready to start making money, press enter. \n");
+            Console.WriteLine("Welcome to the world of entrpeanuership! \n As you play this game, you will see if you have what it takes to own and operate your own lemonade stand. \n  You will need to make decisions about how much lemonade to prepare as well as what price point to set it at. \n You will get a daily forcast to help you plan. \n But beware!  As we all know, weather is prone to change! \n");
         }
 
         public void DisplayRecipe()
@@ -22,7 +22,7 @@ namespace LemonadeStand
 
        public void DisplayInventory(Player player)
         {
-            Console.WriteLine("\nYour Current Inventory:  /n" + player.inventory.lemons + player.inventory.cupsOfSugar + player.inventory.bagsOfIce);
+            Console.WriteLine("\nYour Current Inventory:\n Lemons: " + player.inventory.lemons + "\nCups of Sugar: " + player.inventory.cupsOfSugar + "\nTrays of Ice: " + player.inventory.bagsOfIce);
         }
         public void DisplayStorePrices()
         {

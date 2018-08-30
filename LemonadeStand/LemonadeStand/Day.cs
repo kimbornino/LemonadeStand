@@ -9,13 +9,14 @@ namespace LemonadeStand
     public class Day
     {
         //member variables (has a)
-        public string customers;
+
         public Weather weather;
+        //public Weather actualWeather;
     
         public Day()
         {
             weather = new Weather();
-    
+            //actualWeather = new Weather();
         }
         
     }

@@ -57,7 +57,7 @@ namespace LemonadeStand
             Console.WriteLine("\n How many pitchers would you like to prepare?");
             pitcherRequest = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= pitcherRequest;)
+            for (int i = 0; i <= pitcherRequest;)
             {
             inventory.lemons -= 2 ;
             inventory.bagsOfIce -= 2;

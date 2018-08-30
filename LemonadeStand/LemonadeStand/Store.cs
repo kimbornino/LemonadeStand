@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         //member variables
         double lemonCost = .25;
-        double iceCost = 2.00;
+        double iceCost = .75;
         double sugarCost = 1.00;
         public Inventory inventory;
 
