@@ -21,24 +21,16 @@ namespace LemonadeStand
 
         public void SellItems(Player player)
         {
-            //should be an int after getting user input
-            player.inventory.lemonInventoryRequest += player.inventory.lemons;
-            player.inventory.iceInventoryRequest += player.inventory.bagsOfIce;
-            player.inventory.sugarInventoryRequest += player.inventory.cupsOfSugar;
+            player.inventory.lemons += player.lemonInventoryRequest;
+            player.inventory.bagsOfIce += player.iceInventoryRequest;
+            player.inventory.cupsOfSugar += player.sugarInventoryRequest; 
         }
 
         public void TakeMoney(Player player)
         {
             player.wallet.cash -= (player.lemonInventoryRequest * lemonCost);
             player.wallet.cash -= (player.iceInventoryRequest * iceCost);
-            player.wallet.cash -= (player.sugarINventoryRequest * sugarCost);
+            player.wallet.cash -= (player.sugarInventoryRequest * sugarCost);
         }
-
-
-        /*internal void GetInventory(Player player)
-        {
-            
-        }
-        */
     }
 }

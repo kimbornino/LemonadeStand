@@ -36,7 +36,8 @@ namespace LemonadeStand
             var rules = new UserInterface();
             rules.DisplayRules();
             day.weather.Getforecast();
-            //player.changeRecipe();
+            var recipe = new UserInterface();
+            recipe.DisplayRecipe();
             var price = new UserInterface();
             price.DisplayStorePrices();
             var displayWallet = new UserInterface();
@@ -47,6 +48,8 @@ namespace LemonadeStand
             store.SellItems(player);
             store.TakeMoney(player);
             displayWallet.DisplayWalletBalance(player);
+            displayInventory.DisplayInventory(player);
+            player.MakeLemonade();
             displayInventory.DisplayInventory(player);
 
         }

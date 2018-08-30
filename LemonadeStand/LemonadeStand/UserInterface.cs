@@ -9,15 +9,13 @@ namespace LemonadeStand
     class UserInterface
     {
         //member variables
-    
-
-        //public string weather.forecast.weather;
+   
         public void DisplayRules()
         {
             Console.WriteLine("Welcome to the world of entrpeanuership! \n As you play this game, you will see if you have what it takes to own and operate your own lemonade stand. \n  You will need to make decisions about how much lemonade to prepare as well as what price point to set it at. \n You will get a daily forcast to help you plan. \n But beware!  As we all know, weather is prone to change! \n  Alright.  If you're ready to start making money, press enter. \n");
         }
 
-        public void ChangeRecipe()
+        public void DisplayRecipe()
         {
             Console.WriteLine("This is the default recipe for lemonade(per pitcher): \n \n Lemons: 2 \n Sugar: 6 cups \n Ice: 2 trays \n \n Would you like to change the recipe?  Press 1 to change, press 2 to keep going with the current recipe.");
         }

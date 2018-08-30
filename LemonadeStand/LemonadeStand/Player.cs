@@ -10,8 +10,9 @@ namespace LemonadeStand
     {
         public string playerName;
         public int lemonInventoryRequest;
-        public int sugarINventoryRequest;
+        public int sugarInventoryRequest;
         public int iceInventoryRequest;
+        public int pitcherRequest;
         public Inventory inventory;
         public Wallet wallet;
         //methods 
@@ -42,8 +43,8 @@ namespace LemonadeStand
         public int GetSugarRequest()
         {
             Console.WriteLine("How many cups of sugar would you like?");
-            sugarINventoryRequest = int.Parse(Console.ReadLine());
-            return sugarINventoryRequest;
+            sugarInventoryRequest = int.Parse(Console.ReadLine());
+            return sugarInventoryRequest;
         }
         public int GetIceRequest()
         {
@@ -51,5 +52,21 @@ namespace LemonadeStand
             iceInventoryRequest = int.Parse(Console.ReadLine());
             return iceInventoryRequest;
         }
-    }
+        public void MakeLemonade()
+        {
+            Console.WriteLine("\n How many pitchers would you like to prepare?");
+            pitcherRequest = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= pitcherRequest;)
+            {
+            inventory.lemons -= 2 ;
+            inventory.bagsOfIce -= 2;
+            inventory.cupsOfSugar -= 2;
+                i++;
+            }
+            
+        }
+           
+     }
+ 
 }
