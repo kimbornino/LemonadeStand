@@ -9,8 +9,8 @@ namespace LemonadeStand
     public class Customer 
     {
         //member variables
-        double pricePreference;
-
+        public double pricePreference;
+        public string name;
 
         //constructor
         //does this need parameters?
@@ -20,7 +20,15 @@ namespace LemonadeStand
         }
 
         //methods
+       public void GetRandomPricePreference(int minimum, int maximum, Random rnd)
+        {
+            int tempPricePreference = rnd.Next(5,20);
+            pricePreference =  (tempPricePreference / 10.0);
+          
+        } 
+
     }
 }
 
      
+
