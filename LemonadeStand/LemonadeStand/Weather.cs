@@ -16,6 +16,8 @@ namespace LemonadeStand
         public string actualWeather;
         public List<string> conditionsString;
         public List<string> temp;
+        public int tempIndex;
+        public int conditionIndex;
         //methodsure
 
         //constrctor
@@ -32,17 +34,17 @@ namespace LemonadeStand
         public void GetTemp()
             {
                 Random rnd = new Random();
-                int randomtemp = rnd.Next(0, 4); // creates a number between 0 and 3 
-                temperature = temp[randomtemp];
-                //tempIndex = 
-            }
+                tempIndex = rnd.Next(0, 4); // creates a number between 0 and 3 
+                temperature = temp[tempIndex];
+                
+               }
 
 
-            void GetCondition()
+            public void GetCondition()
             {
                 Random rnd = new Random();
-                int RandomCondition = rnd.Next(0, 4); //creates a number between 0 and 3
-                condition = conditionsString[RandomCondition];
+                conditionIndex = rnd.Next(0, 4); //creates a number between 0 and 3
+                condition = conditionsString[conditionIndex];
             }
 
         public void SetUpWeather()
@@ -64,16 +66,16 @@ namespace LemonadeStand
 
             if (mayChange == 1)
             {
-                int randomtemp = rnd.Next(0, 4); // creates a number between 0 and 3 
-                temperature = temp[randomtemp];
+                int tempIndex = rnd.Next(0, 4); // creates a number between 0 and 3 
+                temperature = temp[tempIndex];
 
             }
             else if (mayChange == 2)
             {
-                int RandomCondition = rnd.Next(0, 4); //creates a number between 0 and 3
-                condition = conditionsString[RandomCondition];
+                int conditionIndex = rnd.Next(0, 4); //creates a number between 0 and 3
+                condition = conditionsString[conditionIndex];
             }
-            Console.WriteLine("\n \n Good Morning!  The actual weather today is " + temperature + " degrees " + "and" + " " + condition + ".");
+            Console.WriteLine("\n \n Good Morning!  The  is " + temperature + " degrees " + "and" + " " + condition + ".");
             return actualWeather;
         }
     }

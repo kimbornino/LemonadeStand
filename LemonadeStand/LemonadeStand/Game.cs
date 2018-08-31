@@ -48,7 +48,11 @@ namespace LemonadeStand
             displayWallet.DisplayWalletBalance(player);
             displayInventory.DisplayInventory(player);
             player.MakeLemonade();
+            player.SetLemonadePrice();
             day.weather.GetActualWeather();
+            day.DetermineWeatherImpact();
+            //need to count and display number of costumers.
+            //Console.WriteLine(
         }
     }
 }

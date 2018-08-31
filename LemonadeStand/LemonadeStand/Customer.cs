@@ -10,12 +10,13 @@ namespace LemonadeStand
     {
         //member variables
         double pricePreference;
-        // int tastepreference;
-        // inherited "name" and anything else from player class
+
+
         //constructor
-        public Customer(double pricePreference)
+        //does this need parameters?
+        public Customer()
         {
-            this.pricePreference = pricePreference;
+            //this.pricePreference = pricePreference;
         }
 
         //methods

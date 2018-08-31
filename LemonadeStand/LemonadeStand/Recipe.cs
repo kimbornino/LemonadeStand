@@ -10,10 +10,10 @@ namespace LemonadeStand
     {
         //member variables 
 
-        public int tasteValue;
-        public int lemonValue;
-        public int sugarValue;
-        public int iceValue;
+        //public int tasteValue;
+        //public int lemonValue;
+        //public int sugarValue;
+        //public int iceValue;
        // public double lemonAmount =2;
         //public double sugarAmount =2;
         //public double iceAmount = 2;

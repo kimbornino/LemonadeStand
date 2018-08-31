@@ -13,6 +13,7 @@ namespace LemonadeStand
         public int sugarInventoryRequest;
         public int iceInventoryRequest;
         public int pitcherRequest;
+        public double lemonadePrice;
         public Inventory inventory;
         public Wallet wallet;
         //methods 
@@ -59,12 +60,17 @@ namespace LemonadeStand
 
             for (int i = 0; i <= pitcherRequest;)
             {
-            inventory.lemons -= 2 ;
-            inventory.bagsOfIce -= 2;
-            inventory.cupsOfSugar -= 2;
+                inventory.lemons -= 2;
+                inventory.bagsOfIce -= 2;
+                inventory.cupsOfSugar -= 2;
                 i++;
             }
-            
+
+        }
+        public void SetLemonadePrice()
+        {
+            Console.WriteLine("How much would you like to charge for your lemonade today?  Please type an amount.");
+            lemonadePrice = double.Parse(Console.ReadLine());
         }
            
      }
