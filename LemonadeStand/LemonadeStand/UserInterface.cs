@@ -17,7 +17,7 @@ namespace LemonadeStand
 
         public void DisplayRecipe()
         {
-            Console.WriteLine("This is the default recipe for lemonade(per pitcher): \n \n Lemons: 2 \n Sugar: 6 cups \n Ice: 2 trays \n \n Would you like to change the recipe?  Press 1 to change, press 2 to keep going with the current recipe.");
+            Console.WriteLine("This is the default recipe for lemonade(per pitcher): \n \n Lemons: 2 \n Sugar: 2 cups \n Ice: 2 trays \n");
         }
 
        public void DisplayInventory(Player player)
@@ -26,7 +26,7 @@ namespace LemonadeStand
         }
         public void DisplayStorePrices()
         {
-           Console.WriteLine("\n \n At the store: \n Price per lemon = $0.25. \n Price per bag of ice = $2.00 \n Price per package of Sugar = $1.00"); 
+           Console.WriteLine("\n \n At the store: \n Price per lemon = $0.25. \n Price per tray of ice = $0.75 \n Price per package of Sugar = $0.50"); 
        }
         public void DisplayWalletBalance(Player player)
         {

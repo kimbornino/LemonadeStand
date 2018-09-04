@@ -31,18 +31,19 @@ namespace LemonadeStand
 
         }
 
-        public void GetSuppliesRequest()
-        {
-            GetLemonRequest();
-            GetSugarRequest();
-            GetIceRequest();
-        }
+        //public void GetSuppliesRequest()
+        //{
+            //GetLemonRequest();
+            //GetSugarRequest();
+            //GetIceRequest();
+        //}
 
         public int GetLemonRequest()
         {
             Console.WriteLine(" \n How many lemons would you like?");
             lemonInventoryRequest = int.Parse(Console.ReadLine());
             return lemonInventoryRequest;
+            
         }
         public int GetSugarRequest()
         {
@@ -61,12 +62,20 @@ namespace LemonadeStand
             Console.WriteLine("\n How many pitchers would you like to prepare?");
             pitcherRequest = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i <= pitcherRequest;)
+            if (inventory.lemons >= (pitcherRequest * 2) && inventory.bagsOfIce >= (pitcherRequest * 2) && inventory.cupsOfSugar >= (pitcherRequest * 2))
             {
-                inventory.lemons -= 2;
-                inventory.bagsOfIce -= 2;
-                inventory.cupsOfSugar -= 2;
-                i++;
+                for (int i = 1; i <= pitcherRequest;)
+                {
+                    inventory.lemons -= 2;
+                    inventory.bagsOfIce -= 2;
+                    inventory.cupsOfSugar -= 2;
+                    i++;
+                }
+            }
+            else
+            {
+                Console.WriteLine("You do not have enough supplies in your inventory to make that many pitchers.  Please enter a valid number.");
+                MakeLemonade();
             }
             //new code
             cupsOfLemonade = pitcherRequest * 10;

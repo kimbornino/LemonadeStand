@@ -9,7 +9,7 @@ namespace LemonadeStand
     public class Wallet
     {
         //member variable
-        public double cash = 20.00;
+        public double cash = 10.00;
 
         public Wallet()
         {

@@ -96,7 +96,7 @@ namespace LemonadeStand
             }
             if (numberOfCustomers > player.cupsOfLemonade)
             {
-                player.cupsOfLemonade = numberOfCustomers;
+                numberOfCustomers = player.cupsOfLemonade;
                 Console.WriteLine("You sold out!  You sold all of your lemonade to " + numberOfCustomers + " people.");
             }
 
@@ -115,35 +115,44 @@ namespace LemonadeStand
             player.wallet.cash += profits;
         }
 
+        public void RunDay()
+        {
+            day.weather.Getforecast();
+            var recipe = new UserInterface();
+            recipe.DisplayRecipe();
+            var price = new UserInterface();
+            price.DisplayStorePrices();
+            var displayWallet = new UserInterface();
+            displayWallet.DisplayWalletBalance(player);
+            var displayInventory = new UserInterface();
+            displayInventory.DisplayInventory(player);
+            //the following 3 are new co
+            store.BuyLemons(player);
+            store.BuyIce(player);
+            store.BuySugar(player);
+            store.SellItems(player);
+            displayWallet.DisplayWalletBalance(player);
+            displayInventory.DisplayInventory(player);
+            player.MakeLemonade();
+            player.SetLemonadePrice();
+            day.weather.GetActualWeather();
+            DetermineNumberOfCustomers();
+            GetProfits();
+            AddToWallet();
+        }
         public void RunGame()
 
     {
-
         var rules = new UserInterface();
         rules.DisplayRules();
-        day.weather.Getforecast();
-        var recipe = new UserInterface();
-        recipe.DisplayRecipe();
-        var price = new UserInterface();
-        price.DisplayStorePrices();
-        var displayWallet = new UserInterface();
-        displayWallet.DisplayWalletBalance(player);
-        var displayInventory = new UserInterface();
-        displayInventory.DisplayInventory(player);
-        player.GetSuppliesRequest();
-        //store.TakeMoney(player);
-        store.SellItems(player);
-        displayWallet.DisplayWalletBalance(player);
-        displayInventory.DisplayInventory(player);
-        player.MakeLemonade();
-        player.SetLemonadePrice();
-        day.weather.GetActualWeather();
-        DetermineNumberOfCustomers();
-        GetProfits();
-        AddToWallet();
+            int days = 7;
+            while (days <= 7)
+            {
+                Console.WriteLine("\n \n Time to get ready for tomorrow!"); 
+                RunDay();
+            }
         
     }
-    
 
     }
 }
