@@ -26,7 +26,15 @@ namespace LemonadeStand
                 player.inventory.bagsOfIce += player.iceInventoryRequest;
                 player.inventory.cupsOfSugar += player.sugarInventoryRequest;
 
-            }           
+            }
+        }
+
+        public void CheckPlayerSolvency(Player player)
+        {
+            if (player.wallet.cash < 3.00  && player.inventory.lemons <2 && player.inventory.bagsOfIce <2 && player.inventory.cupsOfSugar < 2)
+            {
+                Console.WriteLine("Oh no!  You went bankrupt.  Better luck next time!  Please play again!");
+            }
         }
 
         //try to turn each into its own method so there can be a check for enough money // public void TakeMoney(Player player)

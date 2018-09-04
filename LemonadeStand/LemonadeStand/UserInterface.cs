@@ -22,7 +22,7 @@ namespace LemonadeStand
 
        public void DisplayInventory(Player player)
         {
-            Console.WriteLine("\nYour Current Inventory:\n Lemons: " + player.inventory.lemons + "\nCups of Sugar: " + player.inventory.cupsOfSugar + "\nTrays of Ice: " + player.inventory.bagsOfIce);
+            Console.WriteLine("\nYour Current Inventory:\nLemons: " + player.inventory.lemons + "\nCups of Sugar: " + player.inventory.cupsOfSugar + "\nTrays of Ice: " + player.inventory.bagsOfIce);
         }
         public void DisplayStorePrices()
         {

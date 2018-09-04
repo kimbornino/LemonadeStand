@@ -34,7 +34,7 @@ namespace LemonadeStand
 
         public int GetLemonRequest()
         {
-            Console.WriteLine(" \n How many lemons would you like?");
+            Console.WriteLine(" \nHow many lemons would you like?");
             //lemonInventoryRequest = int.Parse(Console.ReadLine());
             try
             {
@@ -120,9 +120,10 @@ namespace LemonadeStand
 
         public void validateLemonadePrice()
         {
-            if (lemonadePrice < 2.00 && lemonadePrice > .50)
+            if (lemonadePrice <= 2.00 && lemonadePrice >= .50)
             {
-                Console.WriteLine("You set your lemonade price to $ " + lemonadePrice + " per cup.  Good Luck!");
+                Console.WriteLine("You set your lemonade price to $ " + lemonadePrice + " per cup.  Press enter to continue!");
+                Console.ReadLine();
             }
             else
             {

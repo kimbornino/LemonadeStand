@@ -31,7 +31,7 @@ namespace LemonadeStand
                 
             if (weatherValue > 7)
             {
-                for (int i = 1; i <= 40; i++)
+                for (int i = 1; i <= 30; i++)
                 {
                     Customer C = new Customer();
                     C.GetRandomPricePreference(1, 20, rnd);
@@ -46,7 +46,7 @@ namespace LemonadeStand
              }
             else if (weatherValue > 5 && weatherValue < 8)
             {
-                for (int i = 1; i <= 30; i++)
+                for (int i = 1; i <= 20; i++)
                 {
                     Customer C = new Customer();
                     C.GetRandomPricePreference(1, 20, rnd);
@@ -58,7 +58,7 @@ namespace LemonadeStand
             }
             else if (weatherValue > 3 && weatherValue < 6)
             {
-                for (int i = 1; i <= 20; i++)
+                for (int i = 1; i <= 10; i++)
                 {
                     Customer C = new Customer();
                     C.GetRandomPricePreference(1, 20, rnd);
@@ -70,7 +70,7 @@ namespace LemonadeStand
             }
             else
             {
-                for (int i = 1; i <= 10; i++)
+                for (int i = 1; i <= 5; i++)
                 {
                     Customer C = new Customer();
                     C.GetRandomPricePreference(1, 20, rnd);
@@ -98,8 +98,9 @@ namespace LemonadeStand
         public double GetProfits()
         {
             profits = (numberOfCustomers * player.lemonadePrice); 
-            Console.WriteLine("You earned $" + profits + ".");
-            //new code
+            Console.WriteLine("You earned $" + profits + ".  Please press enter to continue");
+            Console.ReadLine();
+         
             return profits;
         }
 
@@ -124,6 +125,7 @@ namespace LemonadeStand
             displayWallet.DisplayWalletBalance(player);
             var displayInventory = new UserInterface();
             displayInventory.DisplayInventory(player);
+            store.CheckPlayerSolvency(player);
             store.BuyLemons(player);
             store.BuyIce(player);
             store.BuySugar(player);
