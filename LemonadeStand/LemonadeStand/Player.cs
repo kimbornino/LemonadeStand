@@ -16,6 +16,9 @@ namespace LemonadeStand
         public double lemonadePrice;
         public Inventory inventory;
         public Wallet wallet;
+        public double profits;
+        public int cupsOfLemonade;
+
         //methods 
         public Player()
         {
@@ -65,7 +68,9 @@ namespace LemonadeStand
                 inventory.cupsOfSugar -= 2;
                 i++;
             }
-
+            //new code
+            cupsOfLemonade = pitcherRequest * 10;
+            Console.WriteLine("You made " + pitcherRequest + " pitchers of lemonade.  So you made " + cupsOfLemonade + " cups of lemonade");
         }
         public void SetLemonadePrice()
         {

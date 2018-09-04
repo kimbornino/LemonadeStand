@@ -13,8 +13,9 @@ namespace LemonadeStand
         public Player player;
         public Day day;
         public Store store;
-        public Customer customers;
         public int weatherValue;
+        public int numberOfCustomers;
+        public double profits;
 
 
         public Game()
@@ -45,7 +46,7 @@ namespace LemonadeStand
                     if (C.pricePreference <= player.lemonadePrice)
                     {
                         day.customers.Add(C);
-
+                        
                     }
                 }
                 
@@ -54,10 +55,11 @@ namespace LemonadeStand
             {
                 for (int i = 1; i <= 30; i++)
                 {
-                    day.customer.GetRandomPricePreference(1, 20, rnd);
-                    if (day.customer.pricePreference <= player.lemonadePrice)
+                    Customer C = new Customer();
+                    C.GetRandomPricePreference(1, 20, rnd);
+                    if (C.pricePreference <= player.lemonadePrice)
                     {
-                        day.customers.Add(day.customer);
+                        day.customers.Add(C);
                     }
                 }
             }
@@ -65,10 +67,11 @@ namespace LemonadeStand
             {
                 for (int i = 1; i <= 20; i++)
                 {
-                    day.customer.GetRandomPricePreference(1, 20, rnd);
-                    if (day.customer.pricePreference <= player.lemonadePrice)
+                    Customer C = new Customer();
+                    C.GetRandomPricePreference(1, 20, rnd);
+                    if (C.pricePreference <= player.lemonadePrice)
                     {
-                        day.customers.Add(day.customer);
+                        day.customers.Add(C);
                     }
                 }
             }
@@ -76,17 +79,43 @@ namespace LemonadeStand
             {
                 for (int i = 1; i <= 10; i++)
                 {
-                    day.customer.GetRandomPricePreference(1, 20, rnd);
-                    if (day.customer.pricePreference <= player.lemonadePrice)
+                    Customer C = new Customer();
+                    C.GetRandomPricePreference(1, 20, rnd);
+                    if 
+                        (C.pricePreference <= player.lemonadePrice)
                     {
-                        day.customers.Add(day.customer);
+                        day.customers.Add(C);
                     }
                 }
+               
             }
+            numberOfCustomers = day.customers.Count;
+            if (numberOfCustomers <= player.cupsOfLemonade)
+            {
+                Console.WriteLine("Today your store had " + numberOfCustomers + " customers." );
+            }
+            if (numberOfCustomers > player.cupsOfLemonade)
+            {
+                player.cupsOfLemonade = numberOfCustomers;
+                Console.WriteLine("You sold out!  You sold all of your lemonade to " + numberOfCustomers + " people.");
+            }
+
         }
-    
-        
-    public void RunGame()
+       
+        public double GetProfits()
+        {
+            profits = (numberOfCustomers * player.lemonadePrice); 
+            Console.WriteLine("You earned $" + profits + ".");
+            //new code
+            return profits;
+        }
+
+        public void AddToWallet()
+        {
+            player.wallet.cash += profits;
+        }
+
+        public void RunGame()
 
     {
 
@@ -102,15 +131,17 @@ namespace LemonadeStand
         var displayInventory = new UserInterface();
         displayInventory.DisplayInventory(player);
         player.GetSuppliesRequest();
+        //store.TakeMoney(player);
         store.SellItems(player);
-        store.TakeMoney(player);
         displayWallet.DisplayWalletBalance(player);
         displayInventory.DisplayInventory(player);
         player.MakeLemonade();
         player.SetLemonadePrice();
         day.weather.GetActualWeather();
         DetermineNumberOfCustomers();
-        Console.WriteLine(day.customers);
+        GetProfits();
+        AddToWallet();
+        
     }
     
 

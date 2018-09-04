@@ -12,9 +12,7 @@ namespace LemonadeStand
         public int lemons = 0;
         public int cupsOfSugar = 0;
         public int bagsOfIce = 0;
-        //public int lemonInventoryRequest;
-        //public int iceInventoryRequest;
-        //public int sugarInventoryRequest;
+        
 
         public Inventory()
         {
