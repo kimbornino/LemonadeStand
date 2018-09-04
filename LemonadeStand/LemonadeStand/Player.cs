@@ -30,13 +30,7 @@ namespace LemonadeStand
         {
 
         }
-
-        //public void GetSuppliesRequest()
-        //{
-            //GetLemonRequest();
-            //GetSugarRequest();
-            //GetIceRequest();
-        //}
+        
 
         public int GetLemonRequest()
         {
@@ -71,19 +65,20 @@ namespace LemonadeStand
                     inventory.cupsOfSugar -= 2;
                     i++;
                 }
+                cupsOfLemonade = pitcherRequest * 10;
+                Console.WriteLine("You made " + pitcherRequest + " pitchers of lemonade.  So you made " + cupsOfLemonade + " cups of lemonade");
             }
             else
             {
                 Console.WriteLine("You do not have enough supplies in your inventory to make that many pitchers.  Please enter a valid number.");
                 MakeLemonade();
             }
-            //new code
-            cupsOfLemonade = pitcherRequest * 10;
-            Console.WriteLine("You made " + pitcherRequest + " pitchers of lemonade.  So you made " + cupsOfLemonade + " cups of lemonade");
+          
+           
         }
         public void SetLemonadePrice()
         {
-            Console.WriteLine("How much would you like to charge for your lemonade today?  Please type an amount.");
+            Console.WriteLine("How much would you like to charge for your lemonade today?  Please type an amount between $0.25 and $2.00.");
             lemonadePrice = double.Parse(Console.ReadLine());
         }
            

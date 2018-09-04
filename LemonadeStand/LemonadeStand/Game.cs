@@ -13,7 +13,7 @@ namespace LemonadeStand
         public Player player;
         public Day day;
         public Store store;
-        public int weatherValue;
+        //public int weatherValue;
         public int numberOfCustomers;
         public double profits;
 
@@ -24,18 +24,12 @@ namespace LemonadeStand
             day = new Day();
             player = new Player();
             store = new Store();
-            // already has been instantiatedcustomers = new Customer();
-
         }
-
-        //TotalProfits
-        //DisplayProfits
-        //DecideToDoNextRound
 
         public void DetermineNumberOfCustomers()
         {
-            weatherValue = day.weather.tempIndex + day.weather.conditionIndex;
-            weatherValue = 8;
+           int weatherValue = (day.weather.tempIndex + day.weather.conditionIndex);
+                
             if (weatherValue > 7)
             {
                 for (int i = 1; i <= 40; i++)
@@ -43,7 +37,7 @@ namespace LemonadeStand
                     Customer C = new Customer();
                     C.GetRandomPricePreference(1, 20, rnd);
                     
-                    if (C.pricePreference <= player.lemonadePrice)
+                    if (C.pricePreference >= player.lemonadePrice)
                     {
                         day.customers.Add(C);
                         
@@ -57,7 +51,7 @@ namespace LemonadeStand
                 {
                     Customer C = new Customer();
                     C.GetRandomPricePreference(1, 20, rnd);
-                    if (C.pricePreference <= player.lemonadePrice)
+                    if (C.pricePreference >= player.lemonadePrice)
                     {
                         day.customers.Add(C);
                     }
@@ -69,7 +63,7 @@ namespace LemonadeStand
                 {
                     Customer C = new Customer();
                     C.GetRandomPricePreference(1, 20, rnd);
-                    if (C.pricePreference <= player.lemonadePrice)
+                    if (C.pricePreference >= player.lemonadePrice)
                     {
                         day.customers.Add(C);
                     }
@@ -82,7 +76,7 @@ namespace LemonadeStand
                     Customer C = new Customer();
                     C.GetRandomPricePreference(1, 20, rnd);
                     if 
-                        (C.pricePreference <= player.lemonadePrice)
+                        (C.pricePreference >= player.lemonadePrice)
                     {
                         day.customers.Add(C);
                     }
@@ -115,6 +109,11 @@ namespace LemonadeStand
             player.wallet.cash += profits;
         }
 
+        public void EndGame()
+        {
+            Console.WriteLine("You have reached the end of the 7th day.  Time to close the lemonade stand. Your final balance was $ " + player.wallet + ". Please play again!");
+        }
+
         public void RunDay()
         {
             day.weather.Getforecast();
@@ -126,7 +125,6 @@ namespace LemonadeStand
             displayWallet.DisplayWalletBalance(player);
             var displayInventory = new UserInterface();
             displayInventory.DisplayInventory(player);
-            //the following 3 are new co
             store.BuyLemons(player);
             store.BuyIce(player);
             store.BuySugar(player);
@@ -139,6 +137,7 @@ namespace LemonadeStand
             DetermineNumberOfCustomers();
             GetProfits();
             AddToWallet();
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
         }
         public void RunGame()
 
@@ -151,6 +150,7 @@ namespace LemonadeStand
                 Console.WriteLine("\n \n Time to get ready for tomorrow!"); 
                 RunDay();
             }
+            EndGame();
         
     }
 

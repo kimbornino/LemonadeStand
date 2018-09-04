@@ -36,6 +36,7 @@ namespace LemonadeStand
                 Random rnd = new Random();
                 tempIndex = rnd.Next(0, 4); // creates a number between 0 and 3 
                 temperature = temp[tempIndex];
+            Console.WriteLine(tempIndex);
                 
                }
 
@@ -75,7 +76,7 @@ namespace LemonadeStand
                 int conditionIndex = rnd.Next(0, 4); //creates a number between 0 and 3
                 condition = conditionsString[conditionIndex];
             }
-            Console.WriteLine("\n \n Good Morning!  The  is " + temperature + " degrees " + "and" + " " + condition + ".");
+            Console.WriteLine("\n \n Good Morning!  The actual weather for today is " + temperature + " degrees " + "and" + " " + condition + ".");
             return actualWeather;
         }
     }

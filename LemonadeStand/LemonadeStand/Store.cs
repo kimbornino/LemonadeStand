@@ -60,8 +60,6 @@ namespace LemonadeStand
             {
                 player.wallet.cash -= (player.iceInventoryRequest * iceCost);
             }
-
-            //small bug here.  Console responds that "0" is invalid request even though it is accepted in game.
             else if (player.wallet.cash < (player.iceInventoryRequest * iceCost) && player.iceInventoryRequest != 0)
             {
                 Console.WriteLine("You do not have enough money for this.  Please revise your request or enter 0.");
@@ -83,7 +81,6 @@ namespace LemonadeStand
                 player.wallet.cash -= (player.sugarInventoryRequest * sugarCost);
             }
 
-            //small bug here.  Console responds that "0" is invalid request even though it is accepted in game.
             else if (player.wallet.cash < (player.sugarInventoryRequest * sugarCost) && player.sugarInventoryRequest != 0)
             {
                 Console.WriteLine("You do not have enough money for this.  Please revise your request or enter 0.");
