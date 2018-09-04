@@ -12,12 +12,12 @@ namespace LemonadeStand
    
         public void DisplayRules()
         {
-            Console.WriteLine("Welcome to the world of entrpeanuership! \n As you play this game, you will see if you have what it takes to own and operate your own lemonade stand. \n  You will need to make decisions about how much lemonade to prepare as well as what price point to set it at. \n You will get a daily forcast to help you plan. \n But beware!  As we all know, weather is prone to change! \n");
+            Console.WriteLine("Welcome to the world of entreneurship! \n \n As you play this game, you will see if you have what it takes to own and operate your own lemonade stand. \n You will need to make decisions about how much lemonade to prepare as well as what price point to set it at. \n You will get a daily forcast to help you plan. \n But beware!  As we all know, weather is prone to change! \n");
         }
 
         public void DisplayRecipe()
         {
-            Console.WriteLine("This is the default recipe for lemonade(per pitcher): \n \n Lemons: 2 \n Sugar: 2 cups \n Ice: 2 trays \n");
+            Console.WriteLine("Take a look at the recipe you'll use to make your lemonade. The recipe for lemonade(per pitcher) is: \n 2 lemons, 2 cups sugar, and 2 trays of ice. \n");
         }
 
        public void DisplayInventory(Player player)
@@ -26,7 +26,7 @@ namespace LemonadeStand
         }
         public void DisplayStorePrices()
         {
-           Console.WriteLine("\n \n At the store: \n Price per lemon = $0.25. \n Price per tray of ice = $0.75 \n Price per package of Sugar = $0.50"); 
+           Console.WriteLine("\n Now it's time to buy enough supplies to make your lemonade.  \n \n Store Prices: \n Price per lemon = $0.25. \n Price per tray of ice = $0.75 \n Price per package of Sugar = $0.50"); 
        }
         public void DisplayWalletBalance(Player player)
         {

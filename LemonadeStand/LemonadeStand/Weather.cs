@@ -56,7 +56,7 @@ namespace LemonadeStand
         public string Getforecast()
         {
 
-            Console.WriteLine("\n \n The forecast is " + temperature + " degrees "+ "and" + " " + condition + ".");
+            Console.WriteLine("\nThe forecast is " + temperature + " degrees "+ "and" + " " + condition + ".");
             return forecast;
         }
 

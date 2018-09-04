@@ -30,31 +30,67 @@ namespace LemonadeStand
         {
 
         }
-        
+
 
         public int GetLemonRequest()
         {
             Console.WriteLine(" \n How many lemons would you like?");
-            lemonInventoryRequest = int.Parse(Console.ReadLine());
+            //lemonInventoryRequest = int.Parse(Console.ReadLine());
+            try
+            {
+                lemonInventoryRequest = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Please enter a valid number");
+                GetLemonRequest();
+            }
             return lemonInventoryRequest;
-            
+
         }
         public int GetSugarRequest()
         {
             Console.WriteLine("How many cups of sugar would you like?");
-            sugarInventoryRequest = int.Parse(Console.ReadLine());
+            try
+            {
+                sugarInventoryRequest = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Please enter a valid number");
+                GetSugarRequest();
+            }
             return sugarInventoryRequest;
         }
         public int GetIceRequest()
         {
             Console.WriteLine("How many bags of ice would you like?");
-            iceInventoryRequest = int.Parse(Console.ReadLine());
+            try
+            {
+                iceInventoryRequest = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Please enter a valid number");
+                GetIceRequest();
+            }
+
             return iceInventoryRequest;
         }
         public void MakeLemonade()
         {
-            Console.WriteLine("\n How many pitchers would you like to prepare?");
-            pitcherRequest = int.Parse(Console.ReadLine());
+            {
+                Console.WriteLine("\n How many pitchers would you like to prepare?");
+                try
+                {
+                    pitcherRequest = int.Parse(Console.ReadLine());
+                }
+                catch (FormatException)
+
+                {
+                    Console.WriteLine("Please enter a valid whole number");
+                }
+            }
 
             if (inventory.lemons >= (pitcherRequest * 2) && inventory.bagsOfIce >= (pitcherRequest * 2) && inventory.cupsOfSugar >= (pitcherRequest * 2))
             {
@@ -73,13 +109,26 @@ namespace LemonadeStand
                 Console.WriteLine("You do not have enough supplies in your inventory to make that many pitchers.  Please enter a valid number.");
                 MakeLemonade();
             }
-          
-           
+
+
         }
         public void SetLemonadePrice()
         {
-            Console.WriteLine("How much would you like to charge for your lemonade today?  Please type an amount between $0.25 and $2.00.");
+            Console.WriteLine("How much would you like to charge for your lemonade today?  Please type an amount between $0.50 and $2.00.");
             lemonadePrice = double.Parse(Console.ReadLine());
+        }
+
+        public void validateLemonadePrice()
+        {
+            if (lemonadePrice < 2.00 && lemonadePrice > .50)
+            {
+                Console.WriteLine("You set your lemonade price to $ " + lemonadePrice + " per cup.  Good Luck!");
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid number.");
+                SetLemonadePrice();
+            }
         }
            
      }

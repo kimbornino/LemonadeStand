@@ -13,7 +13,6 @@ namespace LemonadeStand
         public Player player;
         public Day day;
         public Store store;
-        //public int weatherValue;
         public int numberOfCustomers;
         public double profits;
 
@@ -133,6 +132,7 @@ namespace LemonadeStand
             displayInventory.DisplayInventory(player);
             player.MakeLemonade();
             player.SetLemonadePrice();
+            player.validateLemonadePrice();
             day.weather.GetActualWeather();
             DetermineNumberOfCustomers();
             GetProfits();

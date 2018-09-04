@@ -16,7 +16,7 @@ namespace LemonadeStand
         //does this need parameters?
         public Customer()
         {
-            this.pricePreference = pricePreference;
+           // this.pricePreference = pricePreference;
         }
 
         //methods
