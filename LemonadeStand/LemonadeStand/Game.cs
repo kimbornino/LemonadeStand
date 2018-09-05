@@ -28,15 +28,16 @@ namespace LemonadeStand
         public void DetermineNumberOfCustomers()
         {
            int weatherValue = (day.weather.tempIndex + day.weather.conditionIndex);
-                
-            if (weatherValue > 7)
+            //int numberOfCustomers;  
+            if (weatherValue == 6)
             {
+                //numberOfCustomers = 30;
                 for (int i = 1; i <= 30; i++)
                 {
                     Customer C = new Customer();
-                    C.GetRandomPricePreference(1, 20, rnd);
+                    C.GetRandomPricePreference(5, 20, rnd);
                     
-                    if (C.pricePreference >= player.lemonadePrice)
+                    if (C.priceLimit >= player.lemonadePrice)
                     {
                         day.customers.Add(C);
                         
@@ -44,25 +45,25 @@ namespace LemonadeStand
                 }
                 
              }
-            else if (weatherValue > 5 && weatherValue < 8)
+            else if (weatherValue >= 4 && weatherValue < 6)
             {
                 for (int i = 1; i <= 20; i++)
                 {
                     Customer C = new Customer();
-                    C.GetRandomPricePreference(1, 20, rnd);
-                    if (C.pricePreference >= player.lemonadePrice)
+                    C.GetRandomPricePreference(5, 20, rnd);
+                    if (C.priceLimit >= player.lemonadePrice)
                     {
                         day.customers.Add(C);
                     }
                 }
             }
-            else if (weatherValue > 3 && weatherValue < 6)
+            else if (weatherValue > 1 && weatherValue <= 3)
             {
                 for (int i = 1; i <= 10; i++)
                 {
                     Customer C = new Customer();
-                    C.GetRandomPricePreference(1, 20, rnd);
-                    if (C.pricePreference >= player.lemonadePrice)
+                    C.GetRandomPricePreference(5, 20, rnd);
+                    if (C.priceLimit >= player.lemonadePrice)
                     {
                         day.customers.Add(C);
                     }
@@ -73,32 +74,35 @@ namespace LemonadeStand
                 for (int i = 1; i <= 5; i++)
                 {
                     Customer C = new Customer();
-                    C.GetRandomPricePreference(1, 20, rnd);
+                    C.GetRandomPricePreference(5, 20, rnd);
                     if 
-                        (C.pricePreference >= player.lemonadePrice)
+                        (C.priceLimit >= player.lemonadePrice)
                     {
                         day.customers.Add(C);
                     }
                 }
                
             }
+           // FillCustomerList(numberOfCustomers);
+
             numberOfCustomers = day.customers.Count;
             if (numberOfCustomers <= player.cupsOfLemonade)
             {
                 Console.WriteLine("Today your store had " + numberOfCustomers + " customers." );
             }
-            if (numberOfCustomers > player.cupsOfLemonade)
+            if (numberOfCustomers >= player.cupsOfLemonade)
             {
                 numberOfCustomers = player.cupsOfLemonade;
                 Console.WriteLine("You sold out!  You sold all of your lemonade to " + numberOfCustomers + " people.");
             }
-
+            // day.customers = null;
         }
        
         public double GetProfits()
         {
             profits = (numberOfCustomers * player.lemonadePrice); 
             Console.WriteLine("You earned $" + profits + ".  Please press enter to continue");
+
             Console.ReadLine();
          
             return profits;
@@ -111,11 +115,12 @@ namespace LemonadeStand
 
         public void EndGame()
         {
-            Console.WriteLine("You have reached the end of the 7th day.  Time to close the lemonade stand. Your final balance was $ " + player.wallet + ". Please play again!");
+            Console.WriteLine("You have reached the end of the 7th day.  Time to close the lemonade stand. Your final balance was $ " + player.wallet.cash + ". Please play again!");
         }
 
         public void RunDay()
         {
+            day.customers = new List<Customer>();
             day.weather.Getforecast();
             var recipe = new UserInterface();
             recipe.DisplayRecipe();
@@ -146,11 +151,12 @@ namespace LemonadeStand
     {
         var rules = new UserInterface();
         rules.DisplayRules();
-            int days = 7;
+            int days = 1;
             while (days <= 7)
             {
                 Console.WriteLine("\n \n Time to get ready for tomorrow!"); 
                 RunDay();
+                days++;
             }
             EndGame();
         

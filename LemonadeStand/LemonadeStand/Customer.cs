@@ -9,7 +9,7 @@ namespace LemonadeStand
     public class Customer 
     {
         //member variables
-        public double pricePreference;
+        public double priceLimit;
         public string name;
 
         //constructor
@@ -23,7 +23,7 @@ namespace LemonadeStand
        public void GetRandomPricePreference(int minimum, int maximum, Random rnd)
         {
             int tempPricePreference = rnd.Next(5,20);
-            pricePreference =  (tempPricePreference / 10.0);
+            priceLimit =  (tempPricePreference / 10.0);
           
         } 
 
